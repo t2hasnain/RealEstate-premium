@@ -69,26 +69,35 @@ const MobileMenu = ({ onClose }: MobileMenuProps) => {
         </div>
 
         <div className="flex flex-col space-y-6">
-          {menuItems.map((item, i) => (
-            <motion.div
-              key={i}
-              variants={itemVariants}
-              transition={{ duration: 0.3 }}
-            >
-              <Link
-                to={item.to}
-                className="text-white text-2xl font-medium hover:text-white/80 transition-colors"
-                onClick={onClose}
-              >
-                {item.label}
-              </Link>
-            </motion.div>
-          ))}
-          
-          <motion.div variants={itemVariants} transition={{ duration: 0.3 }}>
-            <Button className="w-full text-lg bg-white/20 hover:bg-white/30 backdrop-blur-sm mt-4">
-              Contact Us
-            </Button>
+  {menuItems.map((item, i) => (
+    <motion.div
+      key={i}
+      variants={itemVariants}
+      transition={{ duration: 0.3 }}
+    >
+      <Link
+        to={item.to}
+        className="text-white text-2xl font-medium hover:text-white/80 transition-colors"
+        onClick={onClose}
+      >
+        {item.label}
+      </Link>
+    </motion.div>
+  ))}
+
+  {/* GitHub Button */}
+  <motion.div variants={itemVariants} transition={{ duration: 0.3 }}>
+    <Button className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-full shadow-md hover:bg-gray-900 transition-all">
+      <i className="fab fa-github text-xl"></i>
+      <a
+        href="https://github.com/t2hasnain/RealEstate-premium"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white"
+      >
+        Open Source
+      </a>
+    </Button>
           </motion.div>
         </div>
       </motion.div>
